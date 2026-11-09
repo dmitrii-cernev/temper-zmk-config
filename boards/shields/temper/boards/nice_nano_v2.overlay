@@ -17,7 +17,8 @@
 
 &spi3 {
     compatible = "nordic,nrf-spim";
-    status = "okay";
+    // P0.06 is the nice!view chip-select pin; do not drive it for underglow.
+    status = "disabled";
 
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
