@@ -5,15 +5,21 @@ This is my personal ZMK config for the [temper](https://github.com/raeedcho/temp
 Some notes about this config:
 - Four layers: Base, Extra, System, and Mouse
 - Base is QWERTY, with Ctrl/A, Shift/Z, Ctrl/semicolon, and Shift/slash mod-taps; the left Ctrl thumb is a plain modifier
-- Mod-taps use balanced flavor and a 180 ms tapping term, with prior-idle and quick-tap forcing disabled (tune `&mt` in `boards/shields/temper/temper.keymap`)
+- Mod-taps use hold-preferred flavor and a 180 ms tapping term, with prior-idle and quick-tap forcing disabled (tune `&mt` in `boards/shields/temper/temper.keymap`)
+- Pressing another key while a mod-tap is held activates its modifier immediately,
+  favoring fast Ctrl/Shift chords over protection against accidental typing-roll modifiers
 - Base GUI thumb: tap or hold for GUI; double-tap within 200 ms for GUI+Tab
 - Base right Alt thumb: tap or hold for right Alt (AltGr); double-tap within 200 ms for left Alt+Tab
-- Hold the middle right thumb for Extra: numbers, arrows, parentheses on U/I, and square brackets on M/comma
+- Hold the middle right thumb for Extra: numbers, arrows, parentheses on U/I, and square brackets on M/comma; double-tap for Alt+Tab
+- On all three tap-dances, tap then press again within 200 ms: Tab is tapped once
+  with GUI (GUI thumb) or left Alt (Alt/Extra thumbs). Holding the second press keeps
+  only the modifier down, allowing arrow-key navigation; release to release the modifier.
 - On Extra, tap the semicolon position for apostrophe or hold it for System; Extra's 1–5 select Bluetooth profiles 0–4, and 0 clears the current profile
+- Extra's Escape position: tap for Escape, hold for left Ctrl (uses the shared mod-tap tuning)
 - Extra's Y position sends tilde; the Space thumb sends GUI+Space
 - Extra's Tab position: tap for Tab, hold for Mouse
 - Mouse: P = PrintScreen, H/J/K/L = cursor left/down/up/right, M/comma = scroll down/up,
-  U/I = volume up/down, right thumbs = Mouse 1/2/3 (left/right/middle click)
+  U/I = volume down/up, right thumbs = Mouse 1/2/3 (left/right/middle click)
 - Once holding Mouse's layer key, release the Extra thumb to reuse it as Mouse 2;
   keep holding the layer key to remain on Mouse
 - Both halves stop periodic display updates after 30 seconds idle and enter deep sleep

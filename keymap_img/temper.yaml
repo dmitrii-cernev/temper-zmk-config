@@ -26,7 +26,7 @@ layers:
     - {t: GUI, h: GUI, s: 2× GUI+Tab}
     - SPACE
     - RET
-    - Extra
+    - {t: Extra, h: Extra, s: 2× Alt+Tab}
     - {t: AltGr, h: AltGr, s: 2× Alt+Tab}
   Extra:
   - - {t: ↹, h: Mouse}
@@ -39,7 +39,7 @@ layers:
     - )
     - ''
     - BSPC
-  - - ESC
+  - - {t: ESC, h: ⌃}
     - '4'
     - '5'
     - '6'
@@ -63,7 +63,7 @@ layers:
     - ⎇
     - Gui+SPACE
     - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   System:
   - ['', '', '', '', '', '', '', '', '', '']
@@ -87,11 +87,11 @@ layers:
     - ''
     - ''
     - ''
-  - - ''
+  - - {t: ▽, type: trans}
     - ''
     - ''
     - ''
-    - {type: held}
+    - {t: ▽, type: trans}
     - ''
   Mouse:
   - - {type: held}
@@ -100,15 +100,15 @@ layers:
     - ''
     - ''
     - ''
-    - VOL UP
     - VOL DN
+    - VOL UP
     - ''
     - PSCRN
   - ['', '', '', '', '', Mouse ←, Mouse ↓, Mouse ↑, Mouse →, '']
   - ['', '', '', '', '', '', Scroll ↓, Scroll ↑, '', '']
-  - - ''
+  - - {t: ▽, type: trans}
     - ''
     - ''
     - Mouse 1
-    - {t: Mouse 2, type: held}
+    - Mouse 2
     - Mouse 3

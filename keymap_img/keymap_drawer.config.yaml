@@ -171,6 +171,7 @@ parse_config:
     '&mkp MB3': 'Mouse 3'
     '&gui_tab': {t: 'GUI', h: 'GUI', s: '2× GUI+Tab'}
     '&alt_tab': {t: 'AltGr', h: 'AltGr', s: '2× Alt+Tab'}
+    '&extra_tab': {t: 'Extra', h: 'Extra', s: '2× Alt+Tab'}
     '&mm_grescm': {t: '⎋', s: '` ~'}
     '&mm_bspc_del': {t: '⌫', s: '⌦'}
     '&bspc_del': {t: '⌫', s: '⌦'}
