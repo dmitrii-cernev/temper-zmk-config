@@ -16,7 +16,8 @@ Some notes about this config:
   U/I = volume up/down, right thumbs = Mouse 1/2/3 (left/right/middle click)
 - Once holding Mouse's layer key, release the Extra thumb to reuse it as Mouse 2;
   keep holding the layer key to remain on Mouse
-- Both halves enter deep sleep after 15 minutes of inactivity (`config/temper.conf`)
+- Both halves stop periodic display updates after 30 seconds idle and enter deep sleep
+  after 10 minutes (`config/temper.conf`); active display processing runs at 20 Hz
 - The key matrix is a wake source: press a key on each sleeping half to wake it,
   then allow Bluetooth to reconnect. The waking keypress may not reach the host.
 - Unassigned keys are disabled; transparent Extra keys retain their Base bindings
@@ -46,7 +47,8 @@ just clean        # Remove firmware/build outputs, retain dependencies
 ```
 
 Flash `build/temper-left.uf2` and `build/temper-right.uf2` to their respective halves.
-The left build includes ZMK Studio. Dependencies are stored in `.build/west`; both
+The left build includes USB-only ZMK Studio (its BLE transport is disabled).
+Dependencies are stored in `.build/west`; both
 `.build/` and `build/` are ignored by Git. Run `just setup` again after updating the
 firmware pin; use `just clean` before switching workspaces or toolchains.
 
@@ -77,7 +79,9 @@ that mapping in `portrait_native_index()`.
 Each half's `.conf` disables the stock nice!view widget to avoid duplicate screens.
 The module is registered by `zephyr/module.yml`; no external display dependency is
 needed. Rebuild and flash both halves to install the screens. Idle/sleep settings
-are unchanged by the display module.
+are configured in `config/temper.conf`. `CONFIG_TEMPER_DISPLAY_IDLE_BLANK=y`
+selects ZMK idle blanking despite the upstream nice!view shield's explicit disable;
+this stops periodic display work while idle. Its timeout is `CONFIG_ZMK_IDLE_TIMEOUT`.
 
 Run the dependency-free rotation/animation tests:
 

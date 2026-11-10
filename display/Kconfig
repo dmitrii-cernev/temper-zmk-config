@@ -10,3 +10,11 @@ config TEMPER_DISPLAY
     help
         Portrait battery/output header, typing-driven cat, and profile/layer footer.
         The peripheral shows its own battery, split link, and a static logo.
+
+config TEMPER_DISPLAY_IDLE_BLANK
+    bool "Stop Temper display processing while idle"
+    depends on TEMPER_DISPLAY
+    select ZMK_DISPLAY_BLANK_ON_IDLE
+    help
+        Enable idle blanking even though the upstream nice!view shield's .conf
+        explicitly disables it. ZMK stops the periodic display work timer while idle.
