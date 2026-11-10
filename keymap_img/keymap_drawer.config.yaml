@@ -160,6 +160,17 @@ parse_config:
     UNDS: _
     SPACE: ⎵
   raw_binding_map:
+    '&mmv MOVE_LEFT': 'Mouse ←'
+    '&mmv MOVE_DOWN': 'Mouse ↓'
+    '&mmv MOVE_UP': 'Mouse ↑'
+    '&mmv MOVE_RIGHT': 'Mouse →'
+    '&msc SCRL_DOWN': 'Scroll ↓'
+    '&msc SCRL_UP': 'Scroll ↑'
+    '&mkp MB1': 'Mouse 1'
+    '&mkp MB2': 'Mouse 2'
+    '&mkp MB3': 'Mouse 3'
+    '&gui_tab': {t: 'GUI', h: 'GUI', s: '2× GUI+Tab'}
+    '&alt_tab': {t: 'AltGr', h: 'AltGr', s: '2× Alt+Tab'}
     '&mm_grescm': {t: '⎋', s: '` ~'}
     '&mm_bspc_del': {t: '⌫', s: '⌦'}
     '&bspc_del': {t: '⌫', s: '⌦'}
